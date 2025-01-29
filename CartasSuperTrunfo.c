@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main(){
+int main(void){
 
 
     
@@ -8,9 +8,11 @@ int main(){
     char codigodacarta[50];
     char nomedacidade[50];
     int populacao;
-    float areaemkm;
+    float areaemkm²;
     float pib;
     int numerodepontosturisticos;
+    float densidadepopulacional;
+    float pibpercapita;
 
     //1.referente ao estado.
     printf("digite o estado\n");
@@ -33,14 +35,22 @@ int main(){
     printf("populacao: %d\n", populacao);
 
     //5.referente a area em km².
-    printf("digite o tamanho da area em km\n");
-    scanf("%2f", &areaemkm);
-    printf("area em km²: %2f\n", areaemkm);
+    printf("digite o tamanho da area em km²\n");
+    scanf("%2f", &areaemkm²);
+    printf("area : %2f km² \n", areaemkm²);
+
+    //calculo da população pelos km² = densidade populacional.
+    densidadepopulacional = populacao / areaemkm²;
+    printf("densidade populacional: %2f pessoas/km² \n", densidadepopulacional);
 
     //6.referente ao pib.
     printf("digite o pib");
     scanf("%2f", &pib);
-    printf("pib: %2f\n", pib);
+    printf("pib: %.2f reais \n", pib);
+
+    //calculo do pib per capita;
+    pibpercapita = pib / populacao;
+    printf("pib per capita: %2f reais \n", pibpercapita);
 
     //7.referente ao numero de pontos turisticos.
     printf("digite o numero de pontos turisticos\n");
